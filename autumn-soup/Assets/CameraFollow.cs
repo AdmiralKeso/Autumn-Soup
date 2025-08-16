@@ -38,11 +38,11 @@ public class CameraFollow : MonoBehaviour
         Vector3 min = FloorTilemap.CellToWorld(cellBounds.min);
 
         // Map size (28x16)
-        minX = min.x + halfWidth;
-        maxX = min.x + 28 - halfWidth;
+        minX = min.x + halfWidth - 2;
+        maxX = min.x + 28 - halfWidth + 2;
 
-        minY = min.y + halfHeight;
-        maxY = min.y + 16 - halfHeight;
+        minY = min.y + halfHeight - 2;
+        maxY = min.y + 16 - halfHeight + 3;
 
         // Handle small map case: if map smaller than camera view, lock camera center
         if (minX > maxX)
