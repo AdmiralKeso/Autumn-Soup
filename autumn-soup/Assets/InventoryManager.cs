@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,6 +59,16 @@ public class InventoryManager : MonoBehaviour
             items.Remove(itemName);
             Debug.Log("Removed: " + itemName);
         }
+    }
+
+    internal void RemoveItem(string ingredient, string v)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void AddItem(string dishName, string v)
+    {
+        throw new NotImplementedException();
     }
 }
 
