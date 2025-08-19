@@ -12,6 +12,10 @@ public class PlayerMovement2D : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (InventoryManager.Instance == null)
+        Debug.Log("InventoryManager is missing!");
+    else
+        Debug.Log("InventoryManager is active!");
     }
 
     void Update()
