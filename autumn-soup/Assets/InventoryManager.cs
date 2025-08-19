@@ -8,6 +8,9 @@ public class InventoryManager : MonoBehaviour
     public List<string> items = new List<string>();
     public int maxItems = 6; // Maximum items allowed
 
+    // List of proteins
+    private List<string> proteinItems = new List<string>() { "Beef", "Pork", "Duck" };
+
     private void Awake()
     {
         // Singleton pattern
@@ -30,6 +33,19 @@ public class InventoryManager : MonoBehaviour
             return;
         }
 
+        // Check if the item is a protein and if a protein already exists
+        if (proteinItems.Contains(itemName))
+        {
+            foreach (string item in items)
+            {
+                if (proteinItems.Contains(item))
+                {
+                    Debug.LogWarning("You can only have one protein in the inventory!");
+                    return;
+                }
+            }
+        }
+
         items.Add(itemName);
         Debug.Log("Added: " + itemName);
     }
@@ -44,3 +60,4 @@ public class InventoryManager : MonoBehaviour
         }
     }
 }
+
