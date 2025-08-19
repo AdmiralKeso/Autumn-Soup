@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Globalization;
 using UnityEngine;
 
 public class GrillInteraction : MonoBehaviour
@@ -17,12 +18,34 @@ public class GrillInteraction : MonoBehaviour
             "Bearnaise"
         }
     };
+    // Recipe for Beetroot Risotto
+    private Recipe BeetrootRisotto = new Recipe
+    {
+        dishName = "Beetroot Risotto",
+        requiredIngredients = new System.Collections.Generic.List<string>
+        {
+            "Beets",
+            "Rice"
+        }
+    };
+    private Recipe CrispySkinDuck = new Recipe
+    {
+        dishName = "Crispy Skin Duck with Glazed Carrots",
+        requiredIngredients = new System.Collections.Generic.List<string>
+        {
+            "Duck",
+            "Carrots",
+            "Ginger"
+        }
+    };
 
     void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             TryCook(SteakFrites);
+            TryCook(BeetrootRisotto);
+            TryCook(CrispySkinDuck);
         }
     }
 
