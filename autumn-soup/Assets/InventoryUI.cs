@@ -5,7 +5,10 @@ using TMPro; // Add this for TextMeshPro
 public class InventoryUI : MonoBehaviour
 {
     public TextMeshProUGUI inventoryText; // Changed from Text to TextMeshProUGUI
-
+    void Start()
+    {
+        UpdateUI();
+    }
     // Must be public and void
     public void AddItemFromButton(Button button)
     {
